@@ -113,5 +113,5 @@ Seguimos uma estrutura de clean architecture e DDD para organizar a aplicação.
 
 ## Stay in touch
 
-- Developer - [Allan Nubling](mailto:nubling@gmail.com.br)
+- Developer - [Allan Nubling](mailto:nubling@gmail.com)
   
