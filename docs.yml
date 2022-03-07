@@ -1,0 +1,60 @@
+---
+  openapi: "3.0.0"
+  info: 
+    description: "Api para gerar código de barras com a linha digitavel de boletos"
+    title: "Boleto"
+    version: "0.0.1"
+  paths: 
+    /boleto/{code}: 
+      post: 
+        parameters: 
+          - 
+            name: "code"
+            in: "param"
+            description: "Código digitavel do boleto (apenas numeros) - eg: 21290001192110001210904475617405975870000002000"
+            required: false
+            schema: 
+              type: "string"
+        description: ""
+        tags: 
+          - "Boleto"
+        responses: 
+          200: 
+            description: "ok"
+            content: 
+              application/json: 
+                schema: 
+                  $ref: "#/components/schemas/BoletoResponse"
+          400: 
+            description: "error"
+            content: 
+              application/json: 
+                schema: 
+                  $ref: "#/components/schemas/BoletoError"
+  tags: 
+    - 
+      name: "Boleto"
+      description: ""
+  servers: 
+    - 
+      url: "/"
+  components: 
+    schemas: 
+      BoletoResponse: 
+        required: []
+        properties: 
+          barCode: 
+            type: "string"
+            description: "eg: 21299758700000020000001121100012100447561740"
+          amount: 
+            type: "string"
+            description: "eg: 20.00"
+          expirationDate: 
+            type: "string"
+            description: "eg: 2018-07-16"
+      BoletoError: 
+        required: []
+        properties: 
+          message: 
+            type: "string"
+            description: "eg: bad request"

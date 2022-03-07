@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+    api:
+        build:
+            context: .
+        container_name: boleto
+        env_file:
+            - .env
+        environment:
+            NODE_ENV: production
+        ports:
+            - '$PORT:$PORT'
